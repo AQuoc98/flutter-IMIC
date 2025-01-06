@@ -26,14 +26,14 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _screenWidth = MediaQuery.of(context).size.width;
-    final bool _isSmallScreen = _screenWidth < 480;
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final bool isSmallScreen = screenWidth < 480;
 
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: _isSmallScreen ? _buildSmallScreen() : _buildLargeScreen());
+        body: isSmallScreen ? _buildSmallScreen() : _buildLargeScreen());
   }
 
   Widget _buildCustomList() {
